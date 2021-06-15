@@ -2,8 +2,19 @@ const theAnswer = Math.floor(Math.random() * 101);
 let InputNumber;
 console.log(theAnswer);
 
+//Reflesh the page
 function reset() {
     setTimeout(function() { location.reload(); }, 2000);
+};
+
+//Input error notification
+function inputNotification() {
+    const form = document.getElementById('form');
+    const alert = document.createElement('div');
+    alert.innerHTML = "Please enter a number!"
+    alert.style.color = "red";
+    form.appendChild(alert);
+    reset();
 }
 
 function getNumber(event){
@@ -18,6 +29,13 @@ function getNumber(event){
     const Result = document.createElement('div');
 
     if (InputNumber !== "") {
+        //Check if input is a number
+        if (isNaN(InputNumber)) {
+            console.log("not a number");
+            inputNotification();
+        }
+
+        //Compare the input number with the answer
         if (theAnswer < InputNumber) {
             Result.innerHTML = `${InputNumber} is bigger than the answer!`
             showResult.appendChild(Result);
@@ -30,18 +48,16 @@ function getNumber(event){
     
         if (theAnswer == InputNumber) {
             Result.innerHTML = `Bingo!!! You are the winner!`
+            Result.style.color = "green";
             showResult.appendChild(Result);
             const replayBtn = document.createElement('button');
+            replayBtn.classList.add('item');
+            replayBtn.id = "replayBtn";
             replayBtn.innerHTML = "Play Again";
             replayBtn.onclick = function() { location.reload(); };
             showResult.appendChild(replayBtn);
         }
     } else {
-        const form = document.getElementById('form');
-        const alert = document.createElement('div');
-        alert.innerHTML = "Please enter a number!"
-        form.appendChild(alert);
-        reset();
+        inputNotification();
     }
-}
-
+};

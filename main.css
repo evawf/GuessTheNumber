@@ -6,3 +6,42 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item {
+    margin: 10px 10px;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+#submit {
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    background: none;
+    color: blue;
+}
+
+#replayBtn {
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solide green;
+    background: none;
+    color: green;
+}
