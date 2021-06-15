@@ -1,6 +1,10 @@
-let InputNumber;
 const theAnswer = Math.floor(Math.random() * 101);
+let InputNumber;
 console.log(theAnswer);
+
+function reset() {
+    setTimeout(function() { location.reload(); }, 2000);
+}
 
 function getNumber(event){
     event.preventDefault();
@@ -27,12 +31,17 @@ function getNumber(event){
         if (theAnswer == InputNumber) {
             Result.innerHTML = `Bingo!!! You are the winner!`
             showResult.appendChild(Result);
+            const replayBtn = document.createElement('button');
+            replayBtn.innerHTML = "Play Again";
+            replayBtn.onclick = function() { location.reload(); };
+            showResult.appendChild(replayBtn);
         }
     } else {
         const form = document.getElementById('form');
         const alert = document.createElement('div');
         alert.innerHTML = "Please enter a number!"
         form.appendChild(alert);
-        setTimeout(function() { location.reload(); }, 2000);
+        reset();
     }
 }
+
