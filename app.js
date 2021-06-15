@@ -1,8 +1,9 @@
 let InputNumber;
-const theAnswer = Math.floor(Math.random() * 11);
+const theAnswer = Math.floor(Math.random() * 101);
 console.log(theAnswer);
 
-function getNumber(){
+function getNumber(event){
+    event.preventDefault();
     // Selecting the input element and get its value 
     const guessedNumber = document.getElementById("InputNumber").value;
     // Displaying the value
@@ -12,18 +13,28 @@ function getNumber(){
     const showResult = document.getElementById('showResult');
     const Result = document.createElement('div');
 
-    if (theAnswer < InputNumber) {
-        Result.innerHTML = `${InputNumber} is bigger than the answer!`
-        showResult.appendChild(Result);
+    if (InputNumber !== "") {
+        if (theAnswer < InputNumber) {
+            Result.innerHTML = `${InputNumber} is bigger than the answer!`
+            showResult.appendChild(Result);
+        }
+    
+        if (theAnswer > InputNumber) {
+            Result.innerHTML = `${InputNumber} is smaller than the answer!`
+            showResult.appendChild(Result);
+        }
+    
+        if (theAnswer == InputNumber) {
+            Result.innerHTML = `Bingo!!! You got the correct number!`
+            showResult.appendChild(Result);
+        }
+    } else {
+        const form = document.getElementById('form');
+        const alert = document.createElement('div');
+        alert.innerHTML = "Please enter a number!"
+        form.appendChild(alert);
+        setTimeout(function() { location.reload(); }, 2000);
     }
 
-    if (theAnswer > InputNumber) {
-        Result.innerHTML = `${InputNumber} is smaller than the answer!`
-        showResult.appendChild(Result);
-    }
-
-    if (theAnswer == InputNumber) {
-        Result.innerHTML = `Bingo!!! You got the correct number!`
-        showResult.appendChild(Result);
-    }
+    
 }

@@ -9,9 +9,9 @@
 </head>
 <body>
     <form id="form" action="">
-        <label for="input">Input your number</label>
+        <label for="input">Input your number(0 ~ 100)</label>
         <input type="text" name="number" id="InputNumber" placeholder="Your Number" required>
-        <button id="submit" type="button" name="submit" value="submit" onclick="getNumber()">Submit</button>
+        <button id="submit" type="button" name="submit" value="submit" onclick="getNumber(event)">Submit</button>
     </form>
     
     <div id="showResult">Show Result</div>
