@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form id="form" action="">
         <label for="input">Input your number</label>
-        <input type="text" name="" id="InputNumber">
-        <button>Submit</button>
+        <input type="text" name="number" id="InputNumber" placeholder="Your Number" required>
+        <button id="submit" type="button" name="submit" value="submit" onclick="getNumber()">Submit</button>
     </form>
     
     <div id="showResult">Show Result</div>
