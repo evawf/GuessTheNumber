@@ -25,7 +25,7 @@ function getNumber(event){
         }
     
         if (theAnswer == InputNumber) {
-            Result.innerHTML = `Bingo!!! You got the correct number!`
+            Result.innerHTML = `Bingo!!! You are the winner!`
             showResult.appendChild(Result);
         }
     } else {
@@ -35,6 +35,4 @@ function getNumber(event){
         form.appendChild(alert);
         setTimeout(function() { location.reload(); }, 2000);
     }
-
-    
 }
