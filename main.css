@@ -99,3 +99,14 @@ input:hover {
     justify-content: center;
     font-size: large;
 }
+
+.animationGIF {
+    margin: 10px 0;
+    background-image: url('https://payload.cargocollective.com/1/19/634953/14054157/aquiparavoce_A_bravo.gif');
+    height: 200px;
+    width: 300px;
+    border-image: none;
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

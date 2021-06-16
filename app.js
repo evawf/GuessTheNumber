@@ -37,11 +37,13 @@ function getNumber(event){
 
         //Compare the input number with the answer
         if (theAnswer < InputNumber) {
+            Result.classList.add('wrongAnswer');
             Result.innerHTML = `${InputNumber} is bigger than the answer!`
             showResult.appendChild(Result);
         }
     
         if (theAnswer > InputNumber) {
+            Result.classList.add('wrongAnswer');
             Result.innerHTML = `${InputNumber} is smaller than the answer!`
             showResult.appendChild(Result);
         }
@@ -49,10 +51,18 @@ function getNumber(event){
         if (theAnswer == InputNumber) {
             const submit = document.getElementById('submit');
             submit.style.display = "none";
+            
+            //Display notification and update UI
             Result.innerHTML = `Bingo!!! You are the winner!`
             Result.style.fontSize = "x-large";
             Result.style.color = "green";
             showResult.appendChild(Result);
+
+            const animation = document.createElement('div');
+            animation.classList.add('animationGIF');
+            showResult.appendChild(animation);
+
+            //Add replay button
             const replayBtn = document.createElement('button');
             replayBtn.classList.add('item');
             replayBtn.id = "replayBtn";
@@ -64,3 +74,6 @@ function getNumber(event){
         inputNotification();
     }
 };
+
+const wrongAnswers = document.getElementsByClassName('wrongAnswer');
+console.log(wrongAnswers);
