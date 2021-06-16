@@ -47,6 +47,8 @@ function getNumber(event){
         }
     
         if (theAnswer == InputNumber) {
+            const submit = document.getElementById('submit');
+            submit.style.display = "none";
             Result.innerHTML = `Bingo!!! You are the winner!`
             Result.style.color = "green";
             showResult.appendChild(Result);
