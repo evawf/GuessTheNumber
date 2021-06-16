@@ -1,3 +1,4 @@
+html,
 body {
     height: 100%;
     width: 100%;
@@ -7,6 +8,28 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header {
+    height: 210px;
+    width: 320px;
+    background-image: url('inputBackground.png');
+    border-image: none;
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+h2 {
+    margin-top: 42%;
+}
+
+#mainBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #form {
@@ -21,11 +44,16 @@ body {
 }
 
 input {
+    height: 50px;
     width: 100%;
-    height: 30px;
-    border-radius: 5px;
     border: 1px solid gray;
+    border-radius: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input:hover {
+    background-color: rgb(173, 173, 214);
 }
 
 ::-webkit-input-placeholder {
@@ -33,17 +61,31 @@ input {
 }
 
 #submit {
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid blue;
-    background: none;
-    color: blue;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    border: 0.1px solid gray;
+    background: pink;
+    color: gray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#submit:hover {
+    background: gray;
+    color: white;
 }
 
 #replayBtn {
-    height: 30px;
-    border-radius: 10px;
-    border: 1px solid green;
-    background: none;
-    color: green;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    border: 0.11px solid gray;
+    background: #92bd92;
+    color: gray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#replayBtn:hover {
+    background: gray;
+    color: white;
 }
