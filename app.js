@@ -74,6 +74,3 @@ function getNumber(event){
         inputNotification();
     }
 };
-
-const wrongAnswers = document.getElementsByClassName('wrongAnswer');
-console.log(wrongAnswers);
